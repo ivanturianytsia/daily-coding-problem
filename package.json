@@ -1,0 +1,22 @@
+{
+  "name": "daily-coding-problem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanturianytsia/daily-coding-problem.git"
+  },
+  "author": "Ivan Turianytsia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivanturianytsia/daily-coding-problem/issues"
+  },
+  "homepage": "https://github.com/ivanturianytsia/daily-coding-problem#readme",
+  "dependencies": {
+    "jest": "^24.9.0"
+  }
+}
