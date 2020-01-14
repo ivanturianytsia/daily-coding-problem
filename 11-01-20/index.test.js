@@ -32,15 +32,32 @@ function getLargestSumConst (list) {
   return Math.max(included, excluded)
 }
 
-const tests = [
-  [[2, 4, 6, 2, 5], 13],
-  [[5, 1, 1, 5], 10],
-  [[-1, 1, 5, -5], 5],
-  [[-1, -1, -5, -5], 0],
-  [[-7, 1, 5, 1, 2, 3, 7, 3, 1, 9, 9], 24]
-]
+const tests = [{
+  args: [[2, 4, 6, 2, 5]],
+  expected: 13
+}, {
+  args: [[5, 1, 1, 5]],
+  expected: 10
+}, {
+  args: [[-1, 1, 5, -5]],
+  expected: 5
+}, {
+  args: [[-1, -1, -5, -5]],
+  expected: 0
+}, {
+  args: [[-7, 1, 5, 1, 2, 3, 7, 3, 1, 9, 9]],
+  expected: 24
+}]
 
-module.exports = {
-  solutions: [getLargestSum, getLargestSumConst],
-  tests
-}
+const implementations = [getLargestSum, getLargestSumConst]
+
+describe('Get largest sum of non-adjacent numbers', () => {
+  test('Implementation', () => {
+    implementations.forEach(implementation => {
+      tests.forEach(({ args, expected }) => {
+        const actual = implementation(...args)
+        expect(actual).toEqual(expected)
+      })
+    })
+  })
+})

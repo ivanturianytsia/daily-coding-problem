@@ -41,11 +41,20 @@ const tree1 = new Node(0,
       new Node(1)),
     new Node(0)))
 
-const tests = [
-  [tree1, 5]
-]
+const tests = [{
+  args: [tree1],
+  expected: 5
+}]
 
-tests.forEach(([tree, expected]) => {
-  const result = countUnival(tree)
-  console.assert(result === expected, `Should return ${expected}, got ${result}`)
+const implementations = [countUnival]
+
+describe('Count unival trees', () => {
+  test('Implementation', () => {
+    implementations.forEach(implementation => {
+      tests.forEach(({ args, expected }) => {
+        const actual = implementation(...args)
+        expect(actual).toEqual(expected)
+      })
+    })
+  })
 })
